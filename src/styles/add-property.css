@@ -1,5 +1,30 @@
-.add-property-heading {
+.add-property {
   width: 90%;
   margin: 2rem auto;
   text-align: center;
+  padding: 2rem;
+}
+
+form {
+  width: 50%;
+  margin: auto;
+  border: 3px solid darkgray;
+  padding: 2rem;
+}
+
+form div {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+form div input,
+form div select {
+  margin-left: 1rem;
+}
+
+form button {
+  width: 10%;
+  height: 2rem;
 }
