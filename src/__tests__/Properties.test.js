@@ -5,13 +5,15 @@ import Properties from "../components/Properties";
 
 describe("Properties", () => {
   it("renders correctly", () => {
-    render(
+    const { asFragment } = render(
       <MemoryRouter>
         <Properties />
       </MemoryRouter>,
     );
 
     const headingElement = screen.getByText(/Properties Page/i);
+
+    expect(asFragment()).toMatchSnapshot();
     expect(headingElement).toBeTruthy();
   });
 });

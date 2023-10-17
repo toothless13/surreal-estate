@@ -5,14 +5,15 @@ import AddProperty from "../components/AddProperty";
 
 describe("AddProperty", () => {
   it("renders correctly", () => {
-    render(
+    const { asFragment } = render(
       <MemoryRouter>
         <AddProperty />
       </MemoryRouter>,
     );
 
-    const headingElement = screen.getByText(/Add Property Page/i);
+    expect(asFragment()).toMatchSnapshot();
+    const propertyTitle = screen.getByText(/Property Title/i);
 
-    expect(headingElement).toBeTruthy();
+    expect(propertyTitle).toBeInTheDocument();
   });
 });

@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 
 describe("NavBar", () => {
   it("renders correctly", () => {
-    render(
+    const { asFragment } = render(
       <MemoryRouter>
         <NavBar />
       </MemoryRouter>,
@@ -16,7 +16,8 @@ describe("NavBar", () => {
     );
     const firstLink = screen.getByText(/View Properties/i);
     const secondLink = screen.getByText(/Add a Property/i);
-
+    
+    expect(asFragment()).toMatchSnapshot();
     expect(logo).toBeTruthy();
     expect(firstLink).toBeTruthy();
     expect(secondLink).toBeTruthy();
