@@ -16,7 +16,7 @@ describe("NavBar", () => {
     );
     const firstLink = screen.getByText(/View Properties/i);
     const secondLink = screen.getByText(/Add a Property/i);
-    
+
     expect(asFragment()).toMatchSnapshot();
     expect(logo).toBeTruthy();
     expect(firstLink).toBeTruthy();
