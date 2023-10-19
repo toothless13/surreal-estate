@@ -16,4 +16,8 @@ describe("Alert", () => {
 
     expect(getByText(/Success!!!/).textContent).toBe("Success!!!");
   });
+
+  it("renders nothing if message is not truthy", () => {
+
+  });
 });
