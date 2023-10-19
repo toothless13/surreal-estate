@@ -21,7 +21,7 @@ const AddProperty = () => {
     console.log("handleAddProperty triggered");
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/PropertyListing/",
+        "http://localhost:4000/api/v1/PropertyListing/",
         fields,
       );
       console.log(response);
