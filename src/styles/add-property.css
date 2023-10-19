@@ -1,15 +1,17 @@
 .add-property {
-  width: 90%;
+  width: 30%;
   margin: 2rem auto;
   text-align: center;
   padding: 2rem;
+  border: 3px solid darkgray;
 }
 
 form {
   width: 50%;
   margin: auto;
-  border: 3px solid darkgray;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 form div {
@@ -19,12 +21,17 @@ form div {
   justify-content: center;
 }
 
-form div input,
-form div select {
-  margin-left: 1rem;
+label {
+  display: block;
+  text-align: left;
+  padding: 0.5rem 0;
+  width: 100%;
 }
 
 form button {
-  width: 10%;
+  margin-top: 0.5rem;
+  width: 30%;
   height: 2rem;
+  font-weight: 700;
+  font-size: 1rem;
 }

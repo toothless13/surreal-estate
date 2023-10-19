@@ -12,8 +12,8 @@ describe("Alert", () => {
   });
 
   it("renders a success message", () => {
-    const { getByText } = render(<Alert message="Success!!!" />);
+    const { getByText } = render(<Alert message="Success!!!" success />);
 
     expect(getByText(/Success!!!/).textContent).toBe("Success!!!");
-  })
+  });
 });

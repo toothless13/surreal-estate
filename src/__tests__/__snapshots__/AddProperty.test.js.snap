@@ -6,154 +6,142 @@ exports[`AddProperty renders correctly 1`] = `
     class="add-property"
   >
     <form>
-      <div
-        class="property-title"
+      <label
+        for="title"
       >
-        <label
-          for="title"
-        >
-          Property Title: 
-          <input
-            id="title"
-            name="title"
-            placeholder="Blue Cottage"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="property-city"
+        Property Title:
+        <br />
+        <br />
+        <input
+          id="title"
+          name="title"
+          placeholder="Blue Cottage"
+          value=""
+        />
+      </label>
+      <label
+        for="city"
       >
-        <label
-          for="city"
+        City:
+        <br />
+        <br />
+        <select
+          id="city"
+          name="city"
         >
-          City: 
-          <select
-            id="city"
-            name="city"
+          <option
+            value="Manchester"
           >
-            <option
-              value="Manchester"
-            >
-              Manchester
-            </option>
-            <option
-              value="Leeds"
-            >
-              Leeds
-            </option>
-            <option
-              value="Birmingham"
-            >
-              Birmingham
-            </option>
-            <option
-              value="Oxford"
-            >
-              Oxford
-            </option>
-          </select>
-        </label>
-      </div>
-      <div
-        class="property-type"
-      >
-        <label
-          for="type"
-        >
-          Type: 
-          <select
-            id="type"
-            name="type"
+            Manchester
+          </option>
+          <option
+            value="Leeds"
           >
-            <option
-              value="Flat"
-            >
-              Flat
-            </option>
-            <option
-              value="Detached"
-            >
-              Detached
-            </option>
-            <option
-              value="Semi-Detached"
-            >
-              Semi-Detached
-            </option>
-            <option
-              value="Terraced"
-            >
-              Terraced
-            </option>
-            <option
-              value="End of Terrace"
-            >
-              End of Terrace
-            </option>
-            <option
-              value="Cottage"
-            >
-              Cottage
-            </option>
-            <option
-              value="Bungalow"
-            >
-              Bungalow
-            </option>
-          </select>
-        </label>
-      </div>
-      <div
-        class="property-bedrooms"
+            Leeds
+          </option>
+          <option
+            value="Birmingham"
+          >
+            Birmingham
+          </option>
+          <option
+            value="Oxford"
+          >
+            Oxford
+          </option>
+        </select>
+      </label>
+      <label
+        for="type"
       >
-        <label
-          for="bedrooms"
+        Type:
+        <br />
+        <br />
+        <select
+          id="type"
+          name="type"
         >
-          Bedrooms: 
-          <input
-            id="bedrooms"
-            name="bedrooms"
-            placeholder="3"
-            type="number"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="property-price"
+          <option
+            value="Flat"
+          >
+            Flat
+          </option>
+          <option
+            value="Detached"
+          >
+            Detached
+          </option>
+          <option
+            value="Semi-Detached"
+          >
+            Semi-Detached
+          </option>
+          <option
+            value="Terraced"
+          >
+            Terraced
+          </option>
+          <option
+            value="End of Terrace"
+          >
+            End of Terrace
+          </option>
+          <option
+            value="Cottage"
+          >
+            Cottage
+          </option>
+          <option
+            value="Bungalow"
+          >
+            Bungalow
+          </option>
+        </select>
+      </label>
+      <label
+        for="bedrooms"
       >
-        <label
-          for="price"
-        >
-          Price: £
-          <input
-            id="price"
-            min="0"
-            name="price"
-            placeholder="250000"
-            step="500"
-            type="number"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="property-email"
+        Bedrooms:
+        <br />
+        <br />
+        <input
+          id="bedrooms"
+          name="bedrooms"
+          placeholder="3"
+          type="number"
+          value=""
+        />
+      </label>
+      <label
+        for="price"
       >
-        <label
-          for="email"
-        >
-          Email: 
-          <input
-            id="email"
-            name="email"
-            placeholder="john.smith@email.com"
-            type="text"
-            value=""
-          />
-        </label>
-      </div>
+        Price:
+        <br />
+        <br />
+        <input
+          id="price"
+          min="0"
+          name="price"
+          placeholder="250000"
+          step="500"
+          type="number"
+          value=""
+        />
+      </label>
+      <label
+        for="email"
+      >
+        Email:
+        <br />
+        <br />
+        <input
+          id="email"
+          name="email"
+          placeholder="john.smith@email.com"
+          type="text"
+          value=""
+        />
+      </label>
       <button
         type="submit"
       >
