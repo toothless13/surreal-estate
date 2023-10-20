@@ -10,6 +10,7 @@ const AddProperty = () => {
       city: "Manchester",
       type: "Flat",
       bedrooms: "",
+      bathrooms: "",
       price: "",
       email: "",
     },
@@ -110,6 +111,19 @@ const AddProperty = () => {
             type="number"
             placeholder="3"
             value={fields.bedrooms}
+            onChange={handleFieldChange}
+          />
+        </label>
+        <label htmlFor="bathrooms">
+          Bathrooms:
+          <br />
+          <br />
+          <input
+            id="bathrooms"
+            name="bathrooms"
+            type="number"
+            placeholder="1"
+            value={fields.bathrooms}
             onChange={handleFieldChange}
           />
         </label>

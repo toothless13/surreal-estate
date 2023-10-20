@@ -113,6 +113,20 @@ exports[`AddProperty renders correctly 1`] = `
         />
       </label>
       <label
+        for="bathrooms"
+      >
+        Bathrooms:
+        <br />
+        <br />
+        <input
+          id="bathrooms"
+          name="bathrooms"
+          placeholder="1"
+          type="number"
+          value=""
+        />
+      </label>
+      <label
         for="price"
       >
         Price:
