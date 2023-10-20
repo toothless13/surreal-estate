@@ -25,7 +25,6 @@ const AddProperty = () => {
   const handleAddProperty = async (event) => {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
-    console.log("handleAddProperty triggered");
     try {
       const { data } = await axios.post(
         "http://localhost:4000/api/v1/PropertyListing/",
