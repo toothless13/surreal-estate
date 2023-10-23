@@ -1,4 +1,5 @@
 import React from "react";
+import PropertyCard from "./PropertyCard";
 import "../styles/properties.css";
 
 const Properties = () => {

@@ -21,9 +21,11 @@
   },
   "jest": {
     "transform": {
-        "^.+\\.[t|j]sx?$": "babel-jest"
+      "^.+\\.[t|j]sx?$": "babel-jest"
     },
-    "transformIgnorePatterns": ["<rootDir>/node_modules/(?!axios)/"]
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!axios)/"
+    ]
   },
   "eslintConfig": {
     "extends": [
