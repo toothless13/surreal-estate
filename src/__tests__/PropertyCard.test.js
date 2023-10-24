@@ -31,54 +31,50 @@ describe("PropertyCard", () => {
   });
 
   it("renders correct value for title prop", () => {
-    const component = render(<PropertyCard title={validProps.title} />);
+    render(<PropertyCard title={validProps.title} />);
 
-    expect(component.getByText(/Test Title/i)).toBeTruthy();
-    expect(component.getByText(/Test Title/i)).toBeInTheDocument();
+    expect(screen.getByText(/Test Title/i)).toBeTruthy();
+    expect(screen.getByText(/Test Title/i)).toBeInTheDocument();
   });
 
   it("renders correct value for type prop", () => {
-    const component = render(<PropertyCard type={validProps.type} />);
+    render(<PropertyCard type={validProps.type} />);
 
-    expect(component.getByText(/Test Type/i)).toBeTruthy();
-    expect(component.getByText(/Test Type/i)).toBeInTheDocument();
+    expect(screen.getByText(/Test Type/i)).toBeTruthy();
+    expect(screen.getByText(/Test Type/i)).toBeInTheDocument();
   });
 
   it("renders correct value for bedrooms prop", () => {
-    const { getByTestId } = render(
-      <PropertyCard bedrooms={validProps.bedrooms} />,
-    );
+    render(<PropertyCard bedrooms={validProps.bedrooms} />);
 
-    expect(getByTestId("property-bedrooms")).toBeTruthy();
-    expect(getByTestId("property-bathrooms")).toBeInTheDocument();
+    expect(screen.getByTestId("property-bedrooms")).toBeTruthy();
+    expect(screen.getByTestId("property-bathrooms")).toBeInTheDocument();
   });
 
   it("renders correct value for bathrooms prop", () => {
-    const { getByTestId } = render(
-      <PropertyCard bathrooms={validProps.bathrooms} />,
-    );
+    render(<PropertyCard bathrooms={validProps.bathrooms} />);
 
-    expect(getByTestId("property-bathrooms")).toBeTruthy();
+    expect(screen.getByTestId("property-bathrooms")).toBeTruthy();
   });
 
   it("renders correct value for price prop", () => {
-    const component = render(<PropertyCard price={validProps.price} />);
+    render(<PropertyCard price={validProps.price} />);
 
-    expect(component.getByText(/12345/i)).toBeTruthy();
-    expect(component.getByText(/12345/i)).toBeInTheDocument();
+    expect(screen.getByText(/12345/i)).toBeTruthy();
+    expect(screen.getByText(/12345/i)).toBeInTheDocument();
   });
 
   it("renders correct value for city prop", () => {
-    const component = render(<PropertyCard city={validProps.city} />);
+    render(<PropertyCard city={validProps.city} />);
 
-    expect(component.getByText(/Test City/i)).toBeTruthy();
-    expect(component.getByText(/Test City/i)).toBeInTheDocument();
+    expect(screen.getByText(/Test City/i)).toBeTruthy();
+    expect(screen.getByText(/Test City/i)).toBeInTheDocument();
   });
 
   it("renders correct value for email prop", () => {
-    const component = render(<PropertyCard email={validProps.email} />);
+    render(<PropertyCard email={validProps.email} />);
 
-    expect(component.getByText(/Email/i)).toBeTruthy();
-    expect(component.getByText(/Email/i)).toBeInTheDocument();
+    expect(screen.getByText(/Email/i)).toBeTruthy();
+    expect(screen.getByText(/Email/i)).toBeInTheDocument();
   });
 });

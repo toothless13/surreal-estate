@@ -123,7 +123,7 @@ exports[`App renders correctly 1`] = `
               fill="currentColor"
             />
           </svg>
-          Email
+           Email
         </a>
       </div>
     </div>

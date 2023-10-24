@@ -89,7 +89,7 @@ exports[`Properties renders correctly 1`] = `
             fill="currentColor"
           />
         </svg>
-        Email
+         Email
       </a>
     </div>
   </div>
