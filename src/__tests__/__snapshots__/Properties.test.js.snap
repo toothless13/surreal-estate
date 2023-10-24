@@ -7,5 +7,51 @@ exports[`Properties renders correctly 1`] = `
   >
     Properties Page
   </div>
+  <div
+    class="property-cards-container"
+  >
+    <div
+      class="property-card"
+    >
+      <p
+        class="property-card-title"
+      >
+        title
+      </p>
+      <p
+        class="property-card-type"
+      >
+        Flat
+      </p>
+      <p
+        class="property-card-bedrooms"
+        data-testid="property-bedrooms"
+      >
+        3
+      </p>
+      <p
+        class="property-card-bathrooms"
+        data-testid="property-bathrooms"
+      >
+        1
+      </p>
+      <p
+        class="property-card-price"
+      >
+        12345
+      </p>
+      <p
+        class="property-card-city"
+      >
+        city
+      </p>
+      <a
+        class="property-card-email"
+        href="mailto:test@email.com"
+      >
+        Email
+      </a>
+    </div>
+  </div>
 </DocumentFragment>
 `;

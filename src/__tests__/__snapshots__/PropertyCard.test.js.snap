@@ -32,6 +32,17 @@ exports[`PropertyCard renders correctly 1`] = `
     >
       12345
     </p>
+    <p
+      class="property-card-city"
+    >
+      Test City
+    </p>
+    <a
+      class="property-card-email"
+      href="mailto:test@email.com"
+    >
+      Email
+    </a>
   </div>
 </DocumentFragment>
 `;

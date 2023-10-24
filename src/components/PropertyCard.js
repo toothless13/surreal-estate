@@ -1,6 +1,14 @@
 import React from "react";
 
-const PropertyCard = ({ title, type, bedrooms, bathrooms, price }) => {
+const PropertyCard = ({
+  title,
+  type,
+  bedrooms,
+  bathrooms,
+  price,
+  city,
+  email,
+}) => {
   return (
     <div className="property-card">
       <p className="property-card-title">{title}</p>
@@ -12,6 +20,10 @@ const PropertyCard = ({ title, type, bedrooms, bathrooms, price }) => {
         {bathrooms}
       </p>
       <p className="property-card-price">{price}</p>
+      <p className="property-card-city">{city}</p>
+      <a href={`mailto:${email}`} className="property-card-email">
+        Email
+      </a>
     </div>
   );
 };

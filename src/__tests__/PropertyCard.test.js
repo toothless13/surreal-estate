@@ -67,4 +67,18 @@ describe("PropertyCard", () => {
     expect(component.getByText(/12345/i)).toBeTruthy();
     expect(component.getByText(/12345/i)).toBeInTheDocument();
   });
+
+  it("renders correct value for city prop", () => {
+    const component = render(<PropertyCard city={validProps.city} />);
+
+    expect(component.getByText(/Test City/i)).toBeTruthy();
+    expect(component.getByText(/Test City/i)).toBeInTheDocument();
+  });
+
+  it("renders correct value for email prop", () => {
+    const component = render(<PropertyCard email={validProps.email} />);
+
+    expect(component.getByText(/Email/i)).toBeTruthy();
+    expect(component.getByText(/Email/i)).toBeInTheDocument();
+  });
 });
