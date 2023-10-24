@@ -41,7 +41,6 @@ const AddProperty = () => {
         message: "Server error, please try again later.",
         isSuccess: false,
       });
-      console.error(error);
     }
   };
 
