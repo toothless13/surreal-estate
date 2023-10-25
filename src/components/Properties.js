@@ -19,6 +19,16 @@ const Properties = () => {
     }
   };
 
+  // const deleteAllProperties = async (propertyID) => {
+  //   try {
+  //     const deleted = await axios.delete(
+  //       `http://localhost:4000/api/v1/PropertyListing/${propertyID}`,
+  //     );
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
   useEffect(() => {
     getAllProperties();
   }, []);
@@ -40,6 +50,10 @@ const Properties = () => {
             email={property.email}
           />
         ))}
+        {/* {properties.map((property) => {
+          deleteAllProperties(property._id);
+          return null;
+        })} */}
       </div>
     </>
   );
