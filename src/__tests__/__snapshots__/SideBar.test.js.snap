@@ -17,7 +17,7 @@ exports[`SideBar renders correctly 1`] = `
         class="sidebar-links-item"
       >
         <a
-          href="/?query={\\"city\\": \\"Manchester\\"}"
+          href="/?query={\\"city\\":\\"Manchester\\"}"
         >
           Manchester
         </a>
@@ -26,7 +26,7 @@ exports[`SideBar renders correctly 1`] = `
         class="sidebar-links-item"
       >
         <a
-          href="/?query={\\"city\\": \\"Leeds\\"}"
+          href="/?query={\\"city\\":\\"Leeds\\"}"
         >
           Leeds
         </a>
@@ -35,7 +35,7 @@ exports[`SideBar renders correctly 1`] = `
         class="sidebar-links-item"
       >
         <a
-          href="/?query={\\"city\\": \\"Oxford\\"}"
+          href="/?query={\\"city\\":\\"Oxford\\"}"
         >
           Oxford
         </a>
@@ -44,7 +44,7 @@ exports[`SideBar renders correctly 1`] = `
         class="sidebar-links-item"
       >
         <a
-          href="/?query={\\"city\\": \\"Birmingham\\"}"
+          href="/?query={\\"city\\":\\"Birmingham\\"}"
         >
           Birmingham
         </a>
@@ -56,6 +56,42 @@ exports[`SideBar renders correctly 1`] = `
           href="/"
         >
           Clear Filter
+        </a>
+      </li>
+    </ul>
+    <h3
+      class="sidebar-heading"
+    >
+      Sort By
+    </h3>
+    <ul
+      class="sidebar-links"
+    >
+      <li
+        class="sidebar-links-item"
+      >
+        <a
+          href="/?sort={\\"price\\":1}"
+        >
+          Price Ascending
+        </a>
+      </li>
+      <li
+        class="sidebar-links-item"
+      >
+        <a
+          href="/?sort={\\"price\\":-1}"
+        >
+          Price Descending
+        </a>
+      </li>
+      <li
+        class="sidebar-links-item clear-filter"
+      >
+        <a
+          href="/"
+        >
+          Clear Sort
         </a>
       </li>
     </ul>

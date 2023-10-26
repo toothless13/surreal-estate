@@ -18,5 +18,8 @@ describe("SideBar", () => {
     expect(screen.getByText(/Oxford/i)).toBeInTheDocument();
     expect(screen.getByText(/Birmingham/i)).toBeInTheDocument();
     expect(screen.getByText(/Clear Filter/i)).toBeInTheDocument();
+    expect(screen.getByText(/Price Ascending/i)).toBeInTheDocument();
+    expect(screen.getByText(/Price Descending/i)).toBeInTheDocument();
+    expect(screen.getByText(/Clear Sort/i)).toBeInTheDocument();
   });
 });
