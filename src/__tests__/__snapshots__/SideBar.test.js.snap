@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sidebar"
+  >
+    <h3
+      class="sidebar-heading"
+    >
+      Filter By City
+    </h3>
+    <ul
+      class="sidebar-links"
+    >
+      <li
+        class="sidebar-links-item"
+      >
+        <a
+          href="/?query={\\"city\\": \\"Manchester\\"}"
+        >
+          Manchester
+        </a>
+      </li>
+      <li
+        class="sidebar-links-item"
+      >
+        <a
+          href="/?query={\\"city\\": \\"Leeds\\"}"
+        >
+          Leeds
+        </a>
+      </li>
+      <li
+        class="sidebar-links-item"
+      >
+        <a
+          href="/?query={\\"city\\": \\"Oxford\\"}"
+        >
+          Oxford
+        </a>
+      </li>
+      <li
+        class="sidebar-links-item"
+      >
+        <a
+          href="/?query={\\"city\\": \\"Birmingham\\"}"
+        >
+          Birmingham
+        </a>
+      </li>
+      <li
+        class="sidebar-links-item clear-filter"
+      >
+        <a
+          href="/"
+        >
+          Clear Filter
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
