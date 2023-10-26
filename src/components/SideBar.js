@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import qs from "qs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "../styles/sidebar.css";
 
 const SideBar = () => {
@@ -21,6 +23,12 @@ const SideBar = () => {
 
   return (
     <div className="sidebar">
+      <form className="sidebar-search">
+        <input type="text" />
+        <button type="submit">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </button>
+      </form>
       <h3 className="sidebar-heading">Filter By City</h3>
       <ul className="sidebar-links">
         <li className="sidebar-links-item">
