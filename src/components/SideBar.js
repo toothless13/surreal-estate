@@ -5,6 +5,7 @@ import "../styles/sidebar.css";
 const SideBar = () => {
   return (
     <div className="sidebar">
+      <h3 className="sidebar-heading">Filter By City</h3>
       <ul className="sidebar-links">
         <li className="sidebar-links-item">
           <Link to={`/?query={"city": "Manchester"}`}>Manchester</Link>

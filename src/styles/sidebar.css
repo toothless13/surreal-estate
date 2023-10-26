@@ -1,9 +1,12 @@
 .sidebar {
-  width: 6%;
-  border: 1px solid darkgray;
+  width: 8%;
   background-color: darkgray;
-  margin: 1rem;
   position: fixed;
+  height: 100%;
+}
+
+.sidebar-heading {
+  padding: 0 .5rem;
 }
 
 .sidebar-links {
