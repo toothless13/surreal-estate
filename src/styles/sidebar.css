@@ -3,6 +3,7 @@
   background-color: darkgray;
   position: fixed;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .sidebar-heading {
@@ -46,12 +47,15 @@
 }
 
 .sidebar-search input {
-  width: 60%;
-  height: 1.5rem;
+  width: 70%;
+  height: 24px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .sidebar-search button {
   width: 20%;
-  height: 1.5rem;
+  height: 24px;
   margin: 0;
+  padding: 0;
 }
