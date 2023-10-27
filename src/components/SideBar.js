@@ -1,14 +1,13 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import qs from "qs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "../styles/sidebar.css";
 
 const SideBar = () => {
+  const { search } = useLocation();
   const buildQueryString = (operation, valueObj) => {
-    const { search } = useLocation();
-
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
     const newQueryParams = {
       ...currentQueryParams,
@@ -21,10 +20,23 @@ const SideBar = () => {
     });
   };
 
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const searchQuery = buildQueryString("query", { title: { $regex: query } });
+    navigate(searchQuery);
+  };
+
+  const handleFieldChange = (event) => {
+    setQuery(event.target.value);
+  };
+
   return (
     <div className="sidebar">
-      <form className="sidebar-search">
-        <input type="text" />
+      <form className="sidebar-search" onSubmit={handleSearch}>
+        <input type="text" onChange={handleFieldChange} />
         <button type="submit">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
