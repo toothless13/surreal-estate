@@ -11,7 +11,10 @@ const SideBar = () => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
     };
 
     return qs.stringify(newQueryParams, {
@@ -25,7 +28,10 @@ const SideBar = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    const searchQuery = buildQueryString("query", { title: { $regex: query } });
+
+    const searchQuery = buildQueryString("query", {
+      title: { $regex: query },
+    });
     navigate(searchQuery);
   };
 
