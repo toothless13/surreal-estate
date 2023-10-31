@@ -4,6 +4,7 @@ import "../styles/app.css";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
+import CreateEmailAccount from "./CreateEmailAccount";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Properties />} />
         <Route path="add-property" element={<AddProperty />} />
+        <Route path="sign-up" element={<CreateEmailAccount />} />
       </Routes>
     </div>
   );

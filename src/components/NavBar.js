@@ -18,6 +18,9 @@ const NavBar = () => {
         <li className="navbar-links-item">
           <Link to="add-property">Add a Property</Link>
         </li>
+        <li className="navbar-links-item sign-up">
+          <Link to="sign-up">Sign Up</Link>
+        </li>
       </ul>
     </div>
   );
