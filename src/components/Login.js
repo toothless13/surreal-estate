@@ -1,9 +1,9 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../config/firebase";
 
-const CreateEmailAccount = () => {
+const Login = () => {
   const initialState = {
     fields: {
       email: "",
@@ -14,19 +14,16 @@ const CreateEmailAccount = () => {
   const [fields, setFields] = useState(initialState.fields);
   const navigate = useNavigate();
 
-  const handleSignUp = (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
-    createUserWithEmailAndPassword(auth, fields.email, fields.password)
+    signInWithEmailAndPassword(auth, fields.email, fields.password)
       .then((userCredential) => {
-        // Signed in
         const { user } = userCredential;
         console.log(user);
         navigate("/");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode + errorMessage);
+        console.log(error);
       });
   };
 
@@ -36,8 +33,8 @@ const CreateEmailAccount = () => {
   };
 
   return (
-    <div className="sign-up">
-      <form className="sign-up-form" onSubmit={handleSignUp}>
+    <div className="login">
+      <form className="login-form" onSubmit={handleLogin}>
         <label htmlFor="email">
           Email:{" "}
           <input
@@ -57,10 +54,13 @@ const CreateEmailAccount = () => {
             onChange={handleFieldChange}
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Login</button>
+        <p>
+          Need an account? Sign up <Link to="../sign-up">here</Link>
+        </p>
       </form>
     </div>
   );
 };
 
-export default CreateEmailAccount;
+export default Login;
