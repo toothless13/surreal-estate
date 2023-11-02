@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faBathtub, faStar } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -19,15 +19,9 @@ const PropertyCard = ({
   onSaveProperty,
 }) => {
   const { user } = useContext(Context);
-  const [isFave, setIsFave] = useState(false);
 
   const handleFaveClick = () => {
     onSaveProperty(_id);
-    if (isFave) {
-      setIsFave(false);
-    } else {
-      setIsFave(true);
-    }
   };
 
   return (
@@ -52,11 +46,7 @@ const PropertyCard = ({
           className="save-property"
           onClick={handleFaveClick}
         >
-          {isFave ? (
-            <FontAwesomeIcon className="saved-star" icon={faStar} />
-          ) : (
-            <FontAwesomeIcon className="not-saved-star" icon={faStar} />
-          )}
+          <FontAwesomeIcon icon={faStar} />
         </button>
       )}
     </div>
@@ -64,3 +54,9 @@ const PropertyCard = ({
 };
 
 export default PropertyCard;
+
+/* {isFave ? (
+            <FontAwesomeIcon className="saved-star" icon={faStar} />
+          ) : (
+            <FontAwesomeIcon className="not-saved-star" icon={faStar} />
+          ) */
