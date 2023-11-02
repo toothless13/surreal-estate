@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../config/firebase";
+import Alert from "./Alert";
 import "../styles/login.css";
 
 const Login = () => {
@@ -10,21 +11,36 @@ const Login = () => {
       email: "",
       password: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
+    setAlert({ message: "", isSuccess: false });
     signInWithEmailAndPassword(auth, fields.email, fields.password)
       .then((userCredential) => {
         const { user } = userCredential;
+        setAlert({
+          message: "You have logged in successfully!",
+          isSuccess: true,
+        });
         console.log("User Logged In");
         navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        // const errorCode = error.code;
+        const errorMessage = error.message;
+        setAlert({
+          message: errorMessage,
+          isSuccess: false,
+        });
       });
   };
 
@@ -35,6 +51,7 @@ const Login = () => {
 
   return (
     <div className="login">
+      <Alert message={alert.message} success={alert.isSuccess} />
       <form className="login-form" onSubmit={handleLogin}>
         <label htmlFor="email">
           Email: <br />

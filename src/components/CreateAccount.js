@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../config/firebase";
+import Alert from "./Alert";
 import "../styles/create-account.css";
 
 const CreateAccount = () => {
@@ -10,18 +11,28 @@ const CreateAccount = () => {
       email: "",
       password: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
   const navigate = useNavigate();
 
   const handleSignUp = (event) => {
     event.preventDefault();
+    setAlert({ message: "", isSuccess: false });
     createUserWithEmailAndPassword(auth, fields.email, fields.password)
       .then((userCredential) => {
         // Signed in
         const { user } = userCredential;
         console.log("Account Created");
+        setAlert({
+          message: "Your account has been created!",
+          isSuccess: true,
+        });
         // setLoggedIn(user);
         navigate("/");
       })
@@ -29,6 +40,8 @@ const CreateAccount = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode + errorMessage);
+        setAlert({ message: errorMessage, isSuccess: false });
+        setFields(initialState.fields);
       });
   };
 
@@ -39,6 +52,7 @@ const CreateAccount = () => {
 
   return (
     <div className="sign-up">
+      <Alert message={alert.message} success={alert.isSuccess} />
       <form className="sign-up-form" onSubmit={handleSignUp}>
         <label htmlFor="email">
           Email: <br />
