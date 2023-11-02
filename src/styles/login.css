@@ -15,13 +15,6 @@
   flex-direction: column;
 }
 
-/* .add-property-form div {
-  padding: 1rem;
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-} */
-
 .login-form label {
   display: block;
   text-align: center;
