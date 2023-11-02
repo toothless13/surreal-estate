@@ -20,7 +20,7 @@ const CreateAccount = () => {
       .then((userCredential) => {
         // Signed in
         const { user } = userCredential;
-        console.log(user);
+        console.log("Account Created");
         // setLoggedIn(user);
         navigate("/");
       })

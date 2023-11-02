@@ -19,7 +19,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, fields.email, fields.password)
       .then((userCredential) => {
         const { user } = userCredential;
-        console.log(user);
+        console.log("User Logged In");
         navigate("/");
       })
       .catch((error) => {

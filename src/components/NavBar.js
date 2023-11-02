@@ -6,8 +6,6 @@ import Logout from "./Logout";
 import { Context } from "../Context/AuthContext";
 
 const NavBar = () => {
-  // console.log(useContext(Context));
-  // console.log(user);
   const { user } = useContext(Context);
 
   return (
@@ -26,20 +24,6 @@ const NavBar = () => {
         </li>
       </ul>
       <ul className="account-links">
-        {/* {!user ? (
-          <li className="navbar-links-item sign-up">
-            <Link to="sign-up">Sign Up</Link>
-          </li>
-        ) : (
-          <>
-            <li className="navbar-links-item login">
-              <Link to="login">Login</Link>
-            </li>
-            <li className="navbar-links-item logout">
-              <Logout />
-            </li>
-          </>
-        )} */}
         {!user ? (
           <li className="navbar-links-item login">
             <Link to="login">Login</Link>
