@@ -14,33 +14,6 @@ import Login from "./Login";
 import { AuthContext } from "../Context/AuthContext";
 import Protected from "./Protected";
 
-// const App = () => {
-//   const router = createBrowserRouter([
-//     {
-//       path: "/",
-//       element: <Properties />,
-//     },
-//     {
-//       path: "/add-property",
-//       element: <AddProperty />,
-//     },
-//     {
-//       path: "/sign-up",
-//       element: <CreateAccount />,
-//     },
-//     {
-//       path: "/login",
-//       element: <Login />,
-//     },
-//   ]);
-
-//   return (
-//     <AuthContext>
-//       <RouterProvider router={router} />
-//     </AuthContext>
-//   );
-// };
-
 const App = () => {
   return (
     <div className="App">

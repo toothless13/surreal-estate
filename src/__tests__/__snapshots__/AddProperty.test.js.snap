@@ -5,7 +5,9 @@ exports[`AddProperty renders correctly 1`] = `
   <div
     class="add-property"
   >
-    <form>
+    <form
+      class="add-property-form"
+    >
       <label
         for="title"
       >

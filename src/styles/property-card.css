@@ -24,3 +24,23 @@
 .property-card-email:hover {
   background-color: white;
 }
+
+.save-property {
+  border: none;
+  background-color: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.save-property:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.save-property:active {
+  color: goldenrod;
+}
+
+.saved-star {
+  color: gold;
+}

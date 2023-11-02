@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import "../styles/properties.css";
 import SideBar from "./SideBar";
+import { Context } from "../Context/AuthContext";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "" });
+  const { user } = useContext(Context);
 
   const getAllProperties = async () => {
     try {
@@ -52,6 +54,20 @@ const Properties = () => {
     filterProperties();
   }, [search]);
 
+  const handleSaveProperty = async (propertyId) => {
+    try {
+      const { data } = await axios.post(
+        "http://localhost:4000/api/v1/Favourite",
+        {
+          propertyListing: propertyId,
+          fbUserId: user.uid,
+        },
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <SideBar />
@@ -59,7 +75,11 @@ const Properties = () => {
       <div className="property-cards-container">
         {alert && <Alert message={alert.message} />}
         {properties.map((property) => (
-          <PropertyCard key={property._id} {...property} />
+          <PropertyCard
+            key={property._id}
+            {...property}
+            onSaveProperty={handleSaveProperty}
+          />
         ))}
         {/* {properties.map((property) => {
           deleteAllProperties(property._id);

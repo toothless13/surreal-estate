@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed, faBathtub } from "@fortawesome/free-solid-svg-icons";
+import { faBed, faBathtub, faStar } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import "../styles/property-card.css";
+import { Context } from "../Context/AuthContext";
 
 // rafce gives React boilerplate
 
@@ -14,7 +15,21 @@ const PropertyCard = ({
   price,
   city,
   email,
+  _id,
+  onSaveProperty,
 }) => {
+  const { user } = useContext(Context);
+  const [isFave, setIsFave] = useState(false);
+
+  const handleFaveClick = () => {
+    onSaveProperty(_id);
+    if (isFave) {
+      setIsFave(false);
+    } else {
+      setIsFave(true);
+    }
+  };
+
   return (
     <div className="property-card">
       <h3 className="property-card-title">{title}</h3>
@@ -31,6 +46,19 @@ const PropertyCard = ({
       <a href={`mailto:${email}`} className="property-card-email">
         <FontAwesomeIcon icon={faEnvelope} /> Email
       </a>
+      {user && (
+        <button
+          type="button"
+          className="save-property"
+          onClick={handleFaveClick}
+        >
+          {isFave ? (
+            <FontAwesomeIcon className="saved-star" icon={faStar} />
+          ) : (
+            <FontAwesomeIcon className="not-saved-star" icon={faStar} />
+          )}
+        </button>
+      )}
     </div>
   );
 };
