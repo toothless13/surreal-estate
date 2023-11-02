@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../config/firebase";
+import "../styles/login.css";
 
 const Login = () => {
   const initialState = {
@@ -36,7 +37,8 @@ const Login = () => {
     <div className="login">
       <form className="login-form" onSubmit={handleLogin}>
         <label htmlFor="email">
-          Email:{" "}
+          Email: <br />
+          <br />
           <input
             id="email"
             name="email"
@@ -45,7 +47,8 @@ const Login = () => {
           />
         </label>
         <label htmlFor="password">
-          Password:{" "}
+          Password: <br />
+          <br />
           <input
             id="password"
             name="password"

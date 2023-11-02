@@ -6,7 +6,7 @@
   border: 3px solid darkgray;
 }
 
-form {
+.add-property-form {
   width: 50%;
   margin: auto;
   padding: 2rem;
@@ -14,21 +14,21 @@ form {
   flex-direction: column;
 }
 
-form div {
+.add-property-form div {
   padding: 1rem;
   margin: 1rem;
   display: flex;
   justify-content: center;
 }
 
-label {
+.add-property-form label {
   display: block;
   text-align: left;
   padding: 0.5rem 0;
   width: 100%;
 }
 
-form button {
+.add-property-form button {
   margin-top: 0.5rem;
   width: 30%;
   height: 2rem;

@@ -25,11 +25,11 @@ const NavBar = () => {
       </ul>
       <ul className="account-links">
         {!user ? (
-          <li className="navbar-links-item login">
+          <li className="navbar-links-item navbar-login">
             <Link to="login">Login</Link>
           </li>
         ) : (
-          <li className="navbar-links-item logout">
+          <li className="navbar-links-item navbar-logout">
             <Logout />
           </li>
         )}
