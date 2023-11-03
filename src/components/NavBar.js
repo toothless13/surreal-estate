@@ -22,6 +22,11 @@ const NavBar = () => {
         <li className="navbar-links-item">
           <Link to="add-property">Add a Property</Link>
         </li>
+        {user && (
+          <li className="navbar-links-item">
+            <Link to="saved-properties">Saved Properties</Link>
+          </li>
+        )}
       </ul>
       <ul className="account-links">
         {!user ? (

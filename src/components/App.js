@@ -13,6 +13,7 @@ import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import { AuthContext } from "../Context/AuthContext";
 import Protected from "./Protected";
+import SavedProperties from "./SavedProperties";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Properties />} />
           <Route path="add-property" element={<AddProperty />} />
+          <Route path="saved-properties" element={<SavedProperties />} />
           <Route path="sign-up" element={<CreateAccount />} />
           <Route path="login" element={<Login />} />
         </Routes>
