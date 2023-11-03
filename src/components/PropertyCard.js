@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faBathtub, faStar } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import "../styles/property-card.css";
+import axios from "axios";
 import { Context } from "../Context/AuthContext";
 
 // rafce gives React boilerplate
@@ -19,9 +20,34 @@ const PropertyCard = ({
   onSaveProperty,
 }) => {
   const { user } = useContext(Context);
+  const [isFave, setIsFave] = useState();
+
+  const handleFaveProperty = async (propertyId) => {
+    try {
+      const { data: favesData } = await axios.get(
+        "http://localhost:4000/api/v1/Favourite",
+      );
+      const favesPropertyIds = favesData.map(
+        (faveData) => faveData.propertyListing,
+      );
+      if (favesPropertyIds.includes(propertyId)) {
+        const faveId = favesPropertyIds.findIndex(
+          (faveDataId) => faveDataId === propertyId,
+        );
+        console.log("Not saved");
+        setIsFave(false);
+      } else {
+        console.log("Saved");
+        setIsFave(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleFaveClick = () => {
     onSaveProperty(_id);
+    handleFaveProperty(_id);
   };
 
   return (
@@ -46,7 +72,12 @@ const PropertyCard = ({
           className="save-property"
           onClick={handleFaveClick}
         >
-          <FontAwesomeIcon icon={faStar} />
+          {/* <FontAwesomeIcon icon={faStar} /> */}
+          {isFave ? (
+            <FontAwesomeIcon className="saved-star" icon={faStar} />
+          ) : (
+            <FontAwesomeIcon className="not-saved-star" icon={faStar} />
+          )}
         </button>
       )}
     </div>
@@ -54,9 +85,3 @@ const PropertyCard = ({
 };
 
 export default PropertyCard;
-
-/* {isFave ? (
-            <FontAwesomeIcon className="saved-star" icon={faStar} />
-          ) : (
-            <FontAwesomeIcon className="not-saved-star" icon={faStar} />
-          ) */
