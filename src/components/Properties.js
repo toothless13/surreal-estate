@@ -56,13 +56,25 @@ const Properties = () => {
 
   const handleSaveProperty = async (propertyId) => {
     try {
-      const { data } = await axios.post(
+      const { data: favesData } = await axios.get(
         "http://localhost:4000/api/v1/Favourite",
-        {
+      );
+      const favesPropertyIds = favesData.map(
+        (faveData) => faveData.propertyListing,
+      );
+      if (favesPropertyIds.includes(propertyId)) {
+        const faveId = favesPropertyIds.findIndex(
+          (faveDataId) => faveDataId === propertyId,
+        );
+        await axios.delete(
+          `http://localhost:4000/api/v1/Favourite/${favesData[faveId]._id}`,
+        );
+      } else {
+        await axios.post("http://localhost:4000/api/v1/Favourite", {
           propertyListing: propertyId,
           fbUserId: user.uid,
-        },
-      );
+        });
+      }
     } catch (error) {
       console.log(error);
     }
